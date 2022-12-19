@@ -1,7 +1,7 @@
 from sys import stdin
 
-# Declaring this auxiliar array here avoids to reserve memory each time that the merge function is called.
-# MAX represents the maximum number of elements that are going to be ordered and can be set to a high value since it just has to be done once
+# Declaring this auxiliar array with a fixed size avoids to reserve memory each time that the merge function is called. However, the implementation would also work if this array is created dinamically inside of the merge function.
+# MAX represents the maximum number of elements that are going to be ordered and can be set to a high value since it has to be done just once.
 MAX = 1000000
 AUX = [None for _ in range(MAX)]
 
