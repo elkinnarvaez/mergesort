@@ -7,6 +7,12 @@ AUX = [None for _ in range(MAX)]
 
 
 def mergesort(A, low, hi):
+    """
+    This function sorts the array A[low...hi).
+
+    Input: An array A[0...N), 0 <= low <= hi <= N
+    Output: None (the input array is modified in place)
+    """
     assert 0 <= low <= hi <= len(A)
     if low + 1 < hi:
         mid = low + ((hi-low) >> 1)  # mid = (low + hi) // 2
@@ -16,6 +22,12 @@ def mergesort(A, low, hi):
 
 
 def merge(A, low, mid, hi):
+    """
+    This function combines A[low...mid) and A[mid...hi) into A[low...hi) preserving an ascending order. It assumes that both halves are sorted.
+
+    Input: An array A[low...hi), 0 <= low <= mid <= hi <= len(A)
+    Output: None (the input array is modified in place)
+    """
     for i in range(low, hi):
         AUX[i] = A[i]
     i, l, r = low, low, mid
@@ -35,7 +47,6 @@ def merge(A, low, mid, hi):
 def main():
     A = [14, 13, 27, 10, 35, 19, 42, 44]
     N = len(A)
-    print(A)
     mergesort(A, 0, N)
     print(A)
 
